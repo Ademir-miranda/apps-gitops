@@ -3,7 +3,7 @@ kind: Deployment
 
 metadata:
   name: nginx
-  namespace: a:pp
+  namespace: app
 
 spec:
   replicas: 2
