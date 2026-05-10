@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: app-demo
+  namespace: app
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: app-demo
+
+  template:
+    metadata:
+      labels:
+        app: app-demo
+
+    spec:
+      containers:
+      - name: app-demo
+
+        image: ghcr.io/ademir-miranda/app-demo:latest
+
+        imagePullPolicy: Always
+
+        ports:
+        - containerPort: 5000
